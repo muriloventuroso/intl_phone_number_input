@@ -124,7 +124,8 @@ class SelectorButton extends StatelessWidget {
       barrierDismissible: true,
       builder: (BuildContext context) => AlertDialog(
         content: Directionality(
-          textDirection: Directionality.of(inheritedContext),
+          textDirection:
+              Directionality.maybeOf(inheritedContext) ?? TextDirection.ltr,
           child: Container(
             width: double.maxFinite,
             child: CountrySearchListWidget(
